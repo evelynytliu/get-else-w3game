@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Week 3 Grammar 任務卡</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #fdf6ec;
+      padding: 20px;
+      text-align: center;
+    }
+    h1 {
+      font-size: 2em;
+      margin-bottom: 10px;
+    }
+    #card {
+      margin: 20px auto;
+      padding: 30px;
+      max-width: 500px;
+      background: #fff6f0;
+      border-radius: 12px;
+      box-shadow: 4px 4px 12px rgba(0,0,0,0.1);
+      font-size: 1.3em;
+      line-height: 1.5em;
+      min-height: 160px;
+    }
+    button {
+      padding: 10px 20px;
+      margin: 10px;
+      font-size: 1em;
+      border: none;
+      border-radius: 8px;
+      background: linear-gradient(135deg, #fcd34d, #fbbf24);
+      color: #333;
+      cursor: pointer;
+      box-shadow: 2px 2px 6px rgba(0,0,0,0.1);
+    }
+    button:hover {
+      background: linear-gradient(135deg, #facc15, #f59e0b);
+    }
+  </style>
+</head>
+<body>
+  <h1>🎴 Week 3 Grammar 任務卡</h1>
+  <div id="card">點擊下方按鈕來抽一張任務卡！</div>
+  <button onclick="drawCard()">抽任務卡</button>
+  <button onclick="resetCard()">重新開始</button>
+
+  <script>
+    const cards = [
+      "填空： The net ______ (drop) from the balloon.",
+      "填空： The Poké Balls ______ (take) by a machine.",
+      "填空： The machine ______ (hit) by the thunderbolt.",
+      "填空： Team Rocket ______ (carry) into the sky.",
+      "填空： Their bags ______ (open) by the robot arm.",
+      "改寫： Jessie dropped the net.",
+      "改寫： The machine scanned their bags.",
+      "改寫： Bulbasaur pulled the rope.",
+      "改寫： Pikachu shocked the net.",
+      "改寫： The robot lifted their backpacks.",
+      "連接： They were scared. They didn’t run away.",
+      "連接： The net broke. It was very strong.",
+      "連接： Emmett smiled. He had lost his Poké Balls.",
+      "連接： The sky turned orange. They lay on the grass.",
+      "連接： The machine exploded. It had stolen their things.",
+      "造句： 用 although 造一個句子。",
+      "造句： 用 which 造一個句子。",
+      "造句： 用一個被動語態造句（用課文角色）。",
+      "造句： 想像你是 Meowth，說一句含 “was blown away” 的句子。",
+      "造句： 想像你是 Mars，用 “prepare for” 造句。",
+      "判斷： The Poké Balls was taken.（對 or 錯？為什麼？）",
+      "判斷： Pikachu was broke the net.（對 or 錯？）",
+      "判斷： Although they didn’t plan it, but it was fun.（語法正確嗎？）",
+      "判斷： They lay on the grass, which turned orange.（正確嗎？）",
+      "判斷： The balloon was blow away by Pikachu.（語法正確嗎？）"
+    ];
+
+    function drawCard() {
+      const index = Math.floor(Math.random() * cards.length);
+      document.getElementById("card").innerText = cards[index];
+    }
+
+    function resetCard() {
+      document.getElementById("card").innerText = "點擊下方按鈕來抽一張任務卡！";
+    }
+  </script>
+</body>
+</html>
