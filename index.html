@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hant">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -20,7 +20,7 @@
     }
     #card {
       margin: 30px auto;
-      padding: 40px 30px;
+      padding: 20px;
       max-width: 600px;
       background: linear-gradient(135deg, #ffffff, #fef08a);
       border-radius: 20px;
@@ -30,9 +30,16 @@
       line-height: 1.6em;
       min-height: 180px;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
       text-align: center;
+    }
+    #card img {
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 15px;
+      border-radius: 10px;
     }
     button {
       padding: 12px 28px;
@@ -55,46 +62,127 @@
 </head>
 <body>
   <h1>🎴 Week 3 Grammar 任務卡</h1>
-  <div id="card">點擊下方按鈕來抽一張任務卡！</div>
+  <div id="card">
+    <p>點擊下方按鈕來抽一張任務卡！</p>
+  </div>
   <button onclick="drawCard()">抽任務卡</button>
   <button onclick="resetCard()">重新開始</button>
 
   <script>
     const cards = [
-      "填空： The net ______ (drop) from the balloon.",
-      "填空： The Poké Balls ______ (take) by a machine.",
-      "填空： The machine ______ (hit) by the thunderbolt.",
-      "填空： Team Rocket ______ (carry) into the sky.",
-      "填空： Their bags ______ (open) by the robot arm.",
-      "改寫： Jessie dropped the net.",
-      "改寫： The machine scanned their bags.",
-      "改寫： Bulbasaur pulled the rope.",
-      "改寫： Pikachu shocked the net.",
-      "改寫： The robot lifted their backpacks.",
-      "連接： They were scared. They didn’t run away.",
-      "連接： The net broke. It was very strong.",
-      "連接： Emmett smiled. He had lost his Poké Balls.",
-      "連接： The sky turned orange. They lay on the grass.",
-      "連接： The machine exploded. It had stolen their things.",
-      "造句： 用 although 造一個句子。",
-      "造句： 用 which 造一個句子。",
-      "造句： 用一個被動語態造句（用課文角色）。",
-      "造句： 想像你是 Meowth，說一句含 “was blown away” 的句子。",
-      "造句： 想像你是 Mars，用 “prepare for” 造句。",
-      "判斷： The Poké Balls was taken.（對 or 錯？為什麼？）",
-      "判斷： Pikachu was broke the net.（對 or 錯？）",
-      "判斷： Although they didn’t plan it, but it was fun.（語法正確嗎？）",
-      "判斷： They lay on the grass, which turned orange.（正確嗎？）",
-      "判斷： The balloon was blow away by Pikachu.（語法正確嗎？）"
+      {
+        text: "填空： The net ______ (drop) from the balloon.",
+        img: "https://cdn.pixabay.com/photo/2016/11/29/03/53/hot-air-balloon-1867271_1280.jpg"
+      },
+      {
+        text: "填空： The Poké Balls ______ (take) by a machine.",
+        img: "https://cdn.pixabay.com/photo/2017/01/31/13/14/robot-2027195_1280.png"
+      },
+      {
+        text: "填空： The machine ______ (hit) by the thunderbolt.",
+        img: "https://cdn.pixabay.com/photo/2017/08/30/07/52/lightning-2699530_1280.jpg"
+      },
+      {
+        text: "填空： Team Rocket ______ (carry) into the sky.",
+        img: "https://cdn.pixabay.com/photo/2016/11/29/03/53/hot-air-balloon-1867271_1280.jpg"
+      },
+      {
+        text: "填空： Their bags ______ (open) by the robot arm.",
+        img: "https://cdn.pixabay.com/photo/2017/01/31/13/14/robot-2027195_1280.png"
+      },
+      {
+        text: "改寫： Jessie dropped the net.",
+        img: "https://cdn.pixabay.com/photo/2016/11/29/03/53/hot-air-balloon-1867271_1280.jpg"
+      },
+      {
+        text: "改寫： The machine scanned their bags.",
+        img: "https://cdn.pixabay.com/photo/2017/01/31/13/14/robot-2027195_1280.png"
+      },
+      {
+        text: "改寫： Bulbasaur pulled the rope.",
+        img: "https://cdn.pixabay.com/photo/2016/11/29/03/53/hot-air-balloon-1867271_1280.jpg"
+      },
+      {
+        text: "改寫： Pikachu shocked the net.",
+        img: "https://cdn.pixabay.com/photo/2017/08/30/07/52/lightning-2699530_1280.jpg"
+      },
+      {
+        text: "改寫： The robot lifted their backpacks.",
+        img: "https://cdn.pixabay.com/photo/2017/01/31/13/14/robot-2027195_1280.png"
+      },
+      {
+        text: "連接： They were scared. They didn’t run away.",
+        img: "https://cdn.pixabay.com/photo/2017/08/30/07/52/lightning-2699530_1280.jpg"
+      },
+      {
+        text: "連接： The net broke. It was very strong.",
+        img: "https://cdn.pixabay.com/photo/2016/11/29/03/53/hot-air-balloon-1867271_1280.jpg"
+      },
+      {
+        text: "連接： Emmett smiled. He had lost his Poké Balls.",
+        img: "https://cdn.pixabay.com/photo/2016/11/29/03/53/hot-air-balloon-1867271_1280.jpg"
+      },
+      {
+        text: "連接： The sky turned orange. They lay on the grass.",
+        img: "https://cdn.pixabay.com/photo/2016/11/29/03/53/hot-air-balloon-1867271_1280.jpg"
+      },
+      {
+        text: "連接： The machine exploded. It had stolen their things.",
+        img: "https://cdn.pixabay.com/photo/2017/08/30/07/52/lightning-2699530_1280.jpg"
+      },
+      {
+        text: "造句： 用 although 造一個句子。",
+        img: "https://cdn.pixabay.com/photo/2016/11/29/03/53/hot-air-balloon-1867271_1280.jpg"
+      },
+      {
+        text: "造句： 用 which 造一個句子。",
+        img: "https://cdn.pixabay.com/photo/2016/11/29/03/53/hot-air-balloon-1867271_1280.jpg"
+      },
+      {
+        text: "造句： 用一個被動語態造句（用課文角色）。",
+        img: "https://cdn.pixabay.com/photo/2017/01/31/13/14/robot-2027195_1280.png"
+      },
+      {
+        text: "造句： 想像你是 Meowth，說一句含 “was blown away” 的句子。",
+        img: "https://cdn.pixabay.com/photo/2017/08/30/07/52/lightning-2699530_1280.jpg"
+      },
+      {
+        text: "造句： 想像你是 Mars，用 “prepare for” 造句。",
+        img: "https://cdn.pixabay.com/photo/2017/01/31/13/14/robot-2027195_1280.png"
+      },
+      {
+        text: "判斷： The Poké Balls was taken.（對 or 錯？為什麼？）",
+        img: "https://cdn.pixabay.com/photo/2017/01/31/13/14/robot-2027195_1280.png"
+      },
+      {
+        text: "判斷： Pikachu was broke the net.（對 or 錯？）",
+        img: "https://cdn.pixabay.com/photo/2017/08/30/07/52/lightning-2699530_1280.jpg"
+      },
+      {
+        text: "判斷： Although they didn’t plan it, but it was fun.（語法正確嗎？）",
+        img: "https://cdn.pixabay.com/photo/2016/11/29/03/53/hot-air-balloon-1867271_1280.jpg"
+      },
+      {
+        text: "判斷： They lay on the grass, which turned orange.（正確嗎？）",
+        img: "https://cdn.pixabay.com/photo/2016/11/29/03/53/hot-air-balloon-1867271_1280.jpg"
+      },
+      {
+        text: "判斷： The balloon was blow away by Pikachu.（語法正確嗎？）",
+        img: "https://cdn.pixabay.com/photo/2017/08/30/07/52/lightning-2699530_1280.jpg"
+      }
     ];
 
     function drawCard() {
       const index = Math.floor(Math.random() * cards.length);
-      document.getElementById("card").innerText = cards[index];
+      const card = cards[index];
+      document.getElementById("card").innerHTML = `
+        <img src="${card.img}" alt="任務卡圖片">
+        <p>${card.text}</p>
+      `;
     }
 
     function resetCard() {
-      document.getElementById("card").innerText = "點擊下方按鈕來抽一張任務卡！";
+      document.getElementById("card").innerHTML = "<p>點擊下方按鈕來抽一張任務卡！</p>";
     }
   </script>
 </body>
